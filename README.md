@@ -1,11 +1,11 @@
-# Daryl's personal homepage
+# Shujian Gao (Daryl)'s personal homepage
 
 A lightweight academic homepage, published at **https://daryl-gsj.github.io/**.
 Plain HTML, CSS, and JavaScript. No build step, dependencies, tracking, or backend.
 
 ## Update content
 
-Edit [`assets/js/profile.js`](assets/js/profile.js). It contains the biography,
+Edit [`assets/js/profile.js`](assets/js/profile.js). It contains the welcome message, biography,
 research interests, contact links, publications, news, awards, and service.
 Unknown items are intentionally left empty. Empty sections show a small placeholder;
 missing contact links are inactive rather than pointing to a fake address.

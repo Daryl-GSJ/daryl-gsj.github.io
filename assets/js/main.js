@@ -28,12 +28,13 @@
     }
     return link;
   };
-  const textFields = { welcomeMessage: "welcome-message", position: "position", affiliation: "affiliation", summary: "summary", biography: "biography", researchDescription: "research-description" };
+  const textFields = { welcomeMessage: "welcome-message", position: "position", affiliation: "affiliation", portraitAffiliation: "portrait-affiliation", portraitSubject: "portrait-subject", education: "education-line", summary: "summary", biography: "biography", researchDescription: "research-description" };
   for (const [key, id] of Object.entries(textFields)) {
     if (typeof profile[key] === "string" && profile[key]) byId(id).textContent = profile[key];
   }
   if (profile.name) {
     const name = byId("hero-name");
+    name.classList.toggle("full-name", profile.name.length > 8);
     name.replaceChildren(document.createTextNode(profile.name), element("span", "name-period", "."));
     document.title = `${profile.name} | Personal Homepage`;
   }
@@ -42,7 +43,10 @@
     const image = element("img");
     image.alt = `Portrait of ${profile.name || "Daryl"}`;
     image.src = portraitUrl;
-    image.addEventListener("load", () => byId("portrait-frame").replaceChildren(image), { once: true });
+    image.addEventListener("load", () => {
+      byId("portrait-frame").replaceChildren(image);
+      byId("portrait-frame").classList.add("has-photo");
+    }, { once: true });
   }
   const contacts = [
     ["GitHub", safeUrl(profile.github), "primary-link"],
