@@ -28,7 +28,7 @@
     }
     return link;
   };
-  const textFields = { position: "position", affiliation: "affiliation", summary: "summary", biography: "biography", researchDescription: "research-description" };
+  const textFields = { welcomeMessage: "welcome-message", position: "position", affiliation: "affiliation", summary: "summary", biography: "biography", researchDescription: "research-description" };
   for (const [key, id] of Object.entries(textFields)) {
     if (typeof profile[key] === "string" && profile[key]) byId(id).textContent = profile[key];
   }

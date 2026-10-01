@@ -2,6 +2,7 @@
    Only list verified publication venues and statuses. Do not label a submission as accepted. */
 window.HOMEPAGE = {
   name: "Daryl",
+  welcomeMessage: "Nice to meet you !!!😊 Hope you are happy every day!!!💥",
   position: "Ph.D. Student in Computer Science",
   affiliation: "Fudan University",
   summary: "Studying multimodal intelligence in continuous, interactive environments.",
