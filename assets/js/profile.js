@@ -1,6 +1,5 @@
 /* Edit this file to update the homepage. Empty fields remain inactive.
-   NeurIPS author metadata is intentionally unfilled while the source is unavailable.
-   Other author lists follow the official conference proceedings or arXiv. */
+   Publication authors follow the supplied author list and official sources. */
 window.HOMEPAGE = {
   "name": "Shujian Gao",
   "welcomeMessage": "Nice to meet you !!!😊 Hope you are happy every day!!!💥",
@@ -34,9 +33,18 @@ window.HOMEPAGE = {
   "publications": [
     {
       "title": "Not All Tokens Should Be Treated Equally: Context Credits Reassignment",
-      "authors": [],
+      "authors": [
+        "Shujian Gao",
+        "Yuan Wang",
+        "Jiamei Yan",
+        "Penghao Zhou",
+        "Qinglei Wang",
+        "Jiangtao Yan",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang"
+      ],
       "highlightAuthor": "Shujian Gao",
-      "venue": "NeurIPS 2026",
+      "venue": "NeurIPS 2026 · Poster",
       "links": {
         "Paper": "https://openreview.net/forum?id=VjXxG2aN7k",
         "Repository": "https://github.com/Daryl-GSJ/HiCCR"
@@ -109,7 +117,16 @@ window.HOMEPAGE = {
     }
   ],
   "news": [],
-  "awards": [],
+  "awards": [
+    {
+      "year": "2024",
+      "title": "Beijing Outstanding Graduate"
+    },
+    {
+      "year": "2024",
+      "title": "Outstanding Graduate of Beijing Jiaotong University"
+    }
+  ],
   "service": [
     {
       "role": "Conference reviewer",
@@ -119,5 +136,22 @@ window.HOMEPAGE = {
       "role": "Journal reviewer",
       "organization": "IEEE TCSVT, IEEE TMM, IEEE TIP, IEEE TPAMI, IEEE JBHI, IEEE TMI"
     }
-  ]
+  ],
+  "supervisors": [
+    {
+      "name": "Zuxuan Wu",
+      "url": "https://zxwu.azurewebsites.net/"
+    },
+    {
+      "name": "Yu-Gang Jiang",
+      "url": "https://scholar.google.com/citations?user=f3_FP8AAAAAJ&hl=en"
+    }
+  ],
+  "internship": {
+    "organization": "ByteDance TikTok",
+    "collaborator": {
+      "name": "Penghao Zhou",
+      "url": "https://scholar.google.com/citations?user=yWq1Fd4AAAAJ&hl=en"
+    }
+  }
 };

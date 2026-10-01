@@ -32,6 +32,27 @@
   for (const [key, id] of Object.entries(textFields)) {
     if (typeof profile[key] === "string" && profile[key]) byId(id).textContent = profile[key];
   }
+  if (Array.isArray(profile.supervisors) && profile.supervisors.length) {
+    const supervision = byId("supervision");
+    supervision.replaceChildren(document.createTextNode("I am supervised by "));
+    profile.supervisors.forEach((person, index) => {
+      if (index) supervision.append(document.createTextNode(index === profile.supervisors.length - 1 ? " and " : ", "));
+      const url = safeUrl(person.url);
+      supervision.append(url ? makeLink(person.name, url) : document.createTextNode(person.name));
+    });
+    supervision.append(document.createTextNode("."));
+  }
+  if (profile.internship && profile.internship.organization) {
+    const internship = byId("internship");
+    internship.replaceChildren(document.createTextNode(`I am currently interning at ${profile.internship.organization}`));
+    const person = profile.internship.collaborator;
+    if (person && person.name) {
+      internship.append(document.createTextNode(", working with "));
+      const url = safeUrl(person.url);
+      internship.append(url ? makeLink(person.name, url) : document.createTextNode(person.name));
+    }
+    internship.append(document.createTextNode("."));
+  }
   if (profile.name) {
     const name = byId("hero-name");
     name.classList.toggle("full-name", profile.name.length > 8);
@@ -101,7 +122,7 @@
       return article;
     }));
   }
-  if (Array.isArray(profile.news) && profile.news.length) {
+  if (Array.isArray(profile.news)) {
     byId("news-list").replaceChildren(...profile.news.map(entry => {
       const row = element("div", "news-row");
       const text = element("p");
