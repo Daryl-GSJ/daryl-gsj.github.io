@@ -2,13 +2,12 @@
    Publication authors follow the supplied author list and official sources. */
 window.HOMEPAGE = {
   "name": "Shujian Gao",
-  "welcomeMessage": "Nice to meet you !!!😊 Hope you are happy every day!!!💥",
+  "welcomeMessage": "Thanks for stopping by to see me! 🥰✨🌸🎉",
   "position": "Ph.D. Student in Computer Science",
   "affiliation": "Fudan University · Shanghai Innovation Institute",
   "portraitAffiliation": "Fudan University · SII",
   "portraitSubject": "Joint Ph.D. Program",
-  "education": "Beijing Jiaotong University · Computer Science · Class of 2020",
-  "summary": "Multimodal reasoning, trustworthy representations, and interactive intelligence.",
+  "summary": "Multimodal reasoning, interactive intelligence, data-centric RSI, and trustworthy representations.",
   "biography": "I am a Ph.D. student jointly trained by the Institute of Trustworthy Embodied Artificial Intelligence (TEAI), Fudan University, and Shanghai Innovation Institute (SII). I graduated from Beijing Jiaotong University in 2020 with a degree in Computer Science.",
   "researchDescription": "My research spans multimodal reasoning, reinforcement learning, and interpretable visual representations, with an emphasis on agents that understand evolving environments and provide timely assistance.",
   "portrait": "assets/images/profile.jpg",
@@ -22,15 +21,41 @@ window.HOMEPAGE = {
       "description": "Grounding reasoning and reinforcement learning in visual evidence."
     },
     {
-      "title": "Trustworthy representations",
-      "description": "Learning interpretable visual concepts and robust multimodal representations."
+      "title": "Interactive intelligence",
+      "description": "Streaming models and agents that understand evolving environments and decide when to assist."
     },
     {
-      "title": "Streaming models & agents",
-      "description": "Understanding evolving environments and deciding when to assist."
+      "title": "Data-centric RSI",
+      "description": "Data-driven recursive self-improvement for models that keep getting better."
+    },
+    {
+      "title": "Trustworthy representations",
+      "description": "Learning interpretable visual concepts and robust multimodal representations."
     }
   ],
   "publications": [
+    {
+      "title": "Live Assistant: Learning Whether, When, and Whom to Assist in Real-World Live Social Streams",
+      "authors": [
+        "Shujian Gao",
+        "Jiamei Yan",
+        "Yuchen Yang",
+        "Penghao Zhou",
+        "Qinglei Wang",
+        "Tiehan Fan",
+        "Yuan Wang",
+        "Zuxuan Wu",
+        "Yu-gang Jiang"
+      ],
+      "highlightAuthor": "Shujian Gao",
+      "venue": "Under review",
+      "note": "Featured by 量子位 (QbitAI)",
+      "links": {
+        "Paper": "https://arxiv.org/pdf/2609.27303",
+        "Project": "https://daryl-gsj.github.io/LiveAssistant/",
+        "量子位": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247928382&idx=3&sn=6f58542e8ab82189c7198bdb2583dd37&chksm=e927f805e36d79125e23368d55d96e6ae0b5fec216a1c3e41fa095235a1f56516eacec50fe04&scene=0&xtrack=1"
+      }
+    },
     {
       "title": "Not All Tokens Should Be Treated Equally: Context Credits Reassignment",
       "authors": [
@@ -136,7 +161,6 @@ window.HOMEPAGE = {
       }
     }
   ],
-  "news": [],
   "awards": [
     {
       "year": "2024",

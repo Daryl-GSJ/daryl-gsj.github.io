@@ -28,7 +28,7 @@
     }
     return link;
   };
-  const textFields = { welcomeMessage: "welcome-message", position: "position", affiliation: "affiliation", portraitAffiliation: "portrait-affiliation", portraitSubject: "portrait-subject", education: "education-line", summary: "summary", biography: "biography", researchDescription: "research-description" };
+  const textFields = { welcomeMessage: "welcome-message", position: "position", affiliation: "affiliation", portraitAffiliation: "portrait-affiliation", portraitSubject: "portrait-subject", summary: "summary", biography: "biography", researchDescription: "research-description" };
   for (const [key, id] of Object.entries(textFields)) {
     if (typeof profile[key] === "string" && profile[key]) byId(id).textContent = profile[key];
   }
@@ -106,7 +106,12 @@
         });
         content.append(authors);
       } else if (typeof paper.authors === "string") content.append(element("p", "publication-authors", paper.authors));
-      if (paper.venue) content.append(element("span", `publication-venue${/oral/i.test(paper.venue) ? " venue-oral" : ""}`, paper.venue));
+      if (paper.venue || paper.note) {
+        const badges = element("div", "publication-badges");
+        if (paper.venue) badges.append(element("span", `publication-venue${/oral/i.test(paper.venue) ? " venue-oral" : ""}`, paper.venue));
+        if (paper.note) badges.append(element("span", "publication-venue venue-press", paper.note));
+        content.append(badges);
+      }
       const links = element("div", "publication-links");
       for (const [label, rawUrl] of Object.entries(paper.links || {})) {
         const url = safeUrl(rawUrl);
@@ -115,19 +120,6 @@
       content.append(links);
       article.append(content);
       return article;
-    }));
-  }
-  if (Array.isArray(profile.news) && !profile.news.length) {
-    const news = byId("news");
-    if (news) news.remove();
-  } else if (Array.isArray(profile.news)) {
-    byId("news-list").replaceChildren(...profile.news.map(entry => {
-      const row = element("div", "news-row");
-      const text = element("p");
-      const url = safeUrl(entry.link);
-      text.append(url ? makeLink(entry.text, url) : document.createTextNode(entry.text));
-      row.append(element("span", "news-date", entry.date), text);
-      return row;
     }));
   }
   if (Array.isArray(profile.awards) && profile.awards.length) {
