@@ -12,7 +12,7 @@ window.HOMEPAGE = {
   "researchDescription": "My research spans multimodal reasoning, reinforcement learning, and interpretable visual representations, with an emphasis on agents that understand evolving environments and provide timely assistance.",
   "portrait": "assets/images/profile.jpg",
   "github": "https://github.com/Daryl-GSJ",
-  "email": "",
+  "email": "sjgao26@m.fudan.edu.cn",
   "scholar": "",
   "cv": "",
   "research": [

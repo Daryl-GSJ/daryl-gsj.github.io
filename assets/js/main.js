@@ -77,6 +77,14 @@
   ];
   // Only render contact links that actually exist; empty ones are omitted.
   byId("profile-links").replaceChildren(...contacts.filter(([, url]) => url).map(([label, url, style]) => makeLink(label, url, `profile-link ${style}`)));
+  if (profile.email) {
+    const note = byId("contact-note");
+    if (note) {
+      note.replaceChildren(document.createTextNode("Always happy to chat — drop me a line at "));
+      note.append(makeLink(profile.email, `mailto:${profile.email}`));
+      note.hidden = false;
+    }
+  }
   if (Array.isArray(profile.research) && profile.research.length) {
     const numerals = ["I", "II", "III", "IV", "V", "VI"];
     byId("research-grid").replaceChildren(...profile.research.map((entry, index) => {
