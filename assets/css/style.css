@@ -44,7 +44,7 @@ h1.full-name{font-size:clamp(52px,6vw,82px);letter-spacing:-.035em;text-wrap:bal
 .portrait-monogram{font:italic 148px/1 var(--serif);color:#728eb7;transform:translate(-7px,-10px)}
 .portrait-placeholder{position:absolute;bottom:31px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#53698c}
 .portrait-frame img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.portrait-frame.has-photo{aspect-ratio:4/3;border-radius:4px 4px 36px 4px}
+.portrait-frame.has-photo{aspect-ratio:1240/1080;border-radius:4px 4px 36px 4px}
 .portrait-frame.has-photo:after{display:none}
 figcaption{display:flex;justify-content:space-between;gap:12px;font-size:12px;line-height:1.5;margin:16px 1px 0;color:var(--body)}.portrait-caption-detail{color:var(--muted)}
 .section-rule{height:1px;background:var(--line)}
