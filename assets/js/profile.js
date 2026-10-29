@@ -47,7 +47,7 @@ window.HOMEPAGE = {
       "venue": "NeurIPS 2026 · Poster",
       "links": {
         "Paper": "https://openreview.net/forum?id=VjXxG2aN7k",
-        "Repository": "https://github.com/Daryl-GSJ/HiCCR"
+        "Code": "https://github.com/Daryl-GSJ/HiCCR"
       }
     },
     {
@@ -96,8 +96,28 @@ window.HOMEPAGE = {
       "highlightAuthor": "Shujian Gao",
       "venue": "ICLR 2026",
       "links": {
-        "Paper": "https://openreview.net/forum?id=9M2VrpAtR1",
+        "Paper": "https://proceedings.iclr.cc/paper_files/paper/2026/file/9ab1f4909d575cf41f3dcecfcd4643a8-Paper-Conference.pdf",
         "Code": "https://github.com/Daryl-GSJ/IVQ-CBM"
+      }
+    },
+    {
+      "title": "Beyond N-grams: A Hierarchical Reward Learning Framework for Clinically-Aware Medical Report Generation",
+      "authors": [
+        "Yuan Wang",
+        "Shujian Gao",
+        "Jiaxiang Liu",
+        "Songtao Jiang",
+        "Haoxiang Xia",
+        "Xiaotian Zhang",
+        "Zhaolu Kang",
+        "Yemin Wang",
+        "Zuozhu Liu"
+      ],
+      "highlightAuthor": "Shujian Gao",
+      "venue": "AAAI 2026",
+      "links": {
+        "Paper": "https://arxiv.org/abs/2512.02710",
+        "Code": "https://github.com/Venn2336/HiMed-RL"
       }
     },
     {
@@ -110,7 +130,7 @@ window.HOMEPAGE = {
         "Yu-Gang Jiang"
       ],
       "highlightAuthor": "Shujian Gao",
-      "venue": "IJCNLP",
+      "venue": "IJCNLP · Oral",
       "links": {
         "Paper": "https://arxiv.org/abs/2601.06801"
       }

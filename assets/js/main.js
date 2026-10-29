@@ -75,13 +75,8 @@
     ["Scholar", safeUrl(profile.scholar), ""],
     ["CV", safeUrl(profile.cv), ""]
   ];
-  byId("profile-links").replaceChildren(...contacts.map(([label, url, style]) => {
-    if (url) return makeLink(label, url, `profile-link ${style}`);
-    const pending = element("span", "profile-link pending-link", label);
-    pending.setAttribute("aria-disabled", "true");
-    pending.title = `${label} to be added`;
-    return pending;
-  }));
+  // Only render contact links that actually exist; empty ones are omitted.
+  byId("profile-links").replaceChildren(...contacts.filter(([, url]) => url).map(([label, url, style]) => makeLink(label, url, `profile-link ${style}`)));
   if (Array.isArray(profile.research) && profile.research.length) {
     const numerals = ["I", "II", "III", "IV", "V", "VI"];
     byId("research-grid").replaceChildren(...profile.research.map((entry, index) => {
@@ -111,7 +106,7 @@
         });
         content.append(authors);
       } else if (typeof paper.authors === "string") content.append(element("p", "publication-authors", paper.authors));
-      if (paper.venue) content.append(element("span", "publication-venue", paper.venue));
+      if (paper.venue) content.append(element("span", `publication-venue${/oral/i.test(paper.venue) ? " venue-oral" : ""}`, paper.venue));
       const links = element("div", "publication-links");
       for (const [label, rawUrl] of Object.entries(paper.links || {})) {
         const url = safeUrl(rawUrl);
@@ -122,7 +117,10 @@
       return article;
     }));
   }
-  if (Array.isArray(profile.news)) {
+  if (Array.isArray(profile.news) && !profile.news.length) {
+    const news = byId("news");
+    if (news) news.remove();
+  } else if (Array.isArray(profile.news)) {
     byId("news-list").replaceChildren(...profile.news.map(entry => {
       const row = element("div", "news-row");
       const text = element("p");

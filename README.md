@@ -12,8 +12,8 @@ missing contact links are inactive rather than pointing to a fake address.
 
 ### Add a portrait and CV
 
-1. Upload a portrait to `assets/images/portrait.jpg` and a CV to `assets/files/CV.pdf`.
-2. Set `portrait: "assets/images/portrait.jpg"` and `cv: "assets/files/CV.pdf"`.
+1. Replace the portrait at `assets/images/profile.jpg` (already set) and add a CV to `assets/files/CV.pdf`.
+2. Set `portrait: "assets/images/profile.jpg"` and `cv: "assets/files/CV.pdf"`.
 3. Set `email` and `scholar` to your actual email and Scholar URL.
 
 ### Add a publication
