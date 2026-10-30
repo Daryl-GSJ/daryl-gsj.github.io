@@ -198,25 +198,26 @@
   }
 
   function start() {
-    locate().then(function (loc) {
+    // Count immediately on page load (deduped per browser for 12h); do not wait for location.
+    var last = parseInt(ls("vm-counted") || "0", 10);
+    var fresh = !last || Date.now() - last > 12 * 3600 * 1000;
+    var located = locate();
+    var counted = located.then(function (loc) {
+      if (!fresh) return null;
+      var code = loc && CENTROIDS[loc.code] ? loc.code : "OT";
+      return Promise.all([hitCount("total"), hitCount("c-" + code)]).then(function (r) {
+        if (r[0] !== null) ls("vm-counted", String(Date.now()));
+      });
+    });
+    located.then(function (loc) {
       if (loc) {
-        var name = regionName(loc.code);
-        els.you.textContent = (loc.city ? loc.city + ", " : "") + name;
+        els.you.textContent = (loc.city ? loc.city + ", " : "") + regionName(loc.code);
         drawYou(loc);
       } else {
         els.you.textContent = "Hidden";
       }
-      var code = loc && CENTROIDS[loc.code] ? loc.code : "OT";
-      var last = parseInt(ls("vm-counted") || "0", 10);
-      var fresh = !last || Date.now() - last > 12 * 3600 * 1000;
-      var p = Promise.resolve();
-      if (fresh && loc) {
-        p = Promise.all([hitCount("total"), hitCount("c-" + code)]).then(function (r) {
-          if (r[0] !== null) ls("vm-counted", String(Date.now()));
-        });
-      }
-      return p;
-    }).then(refresh).then(function () {
+    });
+    counted.catch(function () {}).then(refresh).then(function () {
       if (!reduce) setInterval(ripple, 2400);
       setInterval(function () { if (!document.hidden) refresh(); }, 60000);
     }).catch(function () {
@@ -224,10 +225,5 @@
     });
   }
 
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (es) {
-      if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); start(); }
-    }, { rootMargin: "200px" });
-    io.observe(root);
-  } else { start(); }
+  start();
 })();

@@ -2,6 +2,7 @@
    Publication authors follow the supplied author list and official sources. */
 window.HOMEPAGE = {
   "name": "Shujian Gao",
+  "nameZh": "高书剑",
   "welcomeMessage": "Thanks for stopping by to see me! 🥰✨🌸🎉",
   "position": "Ph.D. Student in Computer Science",
   "affiliation": "Fudan University · Shanghai Innovation Institute",

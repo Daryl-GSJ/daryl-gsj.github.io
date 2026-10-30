@@ -57,6 +57,11 @@
     const name = byId("hero-name");
     name.classList.toggle("full-name", profile.name.length > 8);
     name.replaceChildren(document.createTextNode(profile.name), element("span", "name-period", "."));
+    if (profile.nameZh) {
+      const zh = element("span", "name-zh", profile.nameZh);
+      zh.setAttribute("lang", "zh-Hans");
+      name.append(document.createTextNode(" "), zh);
+    }
     document.title = `${profile.name} | Personal Homepage`;
   }
   const portraitUrl = safeUrl(profile.portrait);
